@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sidebar</title>
+	<style type="text/css">
+		.wrapper{
+			width:1200px;
+			height:1000px;
+			margin:0 auto;
+			background:#eee;
+		}
+		.side{
+			position:fixed;
+			right:0px;
+		}
+		.side1{
+			top:100px;
+			width:176px;
+			right:-128px;
+		}
+		.side2{
+			top:261px;
+			width:175px;
+			position:fixed;
+
+		}
+		.side2 a{
+			width: 122px;
+			height: 33px;
+			position: absolute;
+			display: block;
+			z-index: 1;
+			top: 17px;
+			left: 34px;
+		}
+		.side3{
+			top:424px;
+			position:fixed;
+		}
+		.side3 a{
+			width: 122px;
+			height: 32px;
+			position: absolute;
+			display: block;
+			z-index: 1;
+			top: 83px;
+			left: 72px;
+}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div id="sidebar-wrapper">
+			<div class="side side1" id="side-contact">
+				<img src="side1.png">
+			</div>
+			<div class="side side2">
+				<img src="side2.png">
+				<a href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzgwMDE4NjgwN180ODA2OThfODAwMTg2ODA3XzJf"></a>
+				<a style="top: 59px;" href="https://webapp.bcrcorp.com.au/getting_started/sim?l=cn&cur=usd"></a>
+				<a style="top: 101px;" href="https://download.mql5.com/cdn/web/bacera.co.pty/mt4/bcr4setup.exe"></a>
+			</div>
+			<div class="side side3">
+				<img src="side3.png">
+				<a href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzgwMDE4NjgwN180ODA2OThfODAwMTg2ODA3XzJf"></a>
+			</div>
+		</div>
+		
+	</div>
+	<script type="text/javascript">
+		
+		var sideBar = document.getElementById('side-contact');
+
+			sideBar.onmouseover = function(){
+				this.style.right = 0 + "px";
+			}
+			sideBar.onmouseleave = function(){
+				this.style.right = -128 + "px";
+			}
+
+		function checkDevice(){
+			if(navigator.userAgent.match(/Android/i)  
+                || navigator.userAgent.match(/webOS/i)  
+                || navigator.userAgent.match(/iPhone/i)  
+                || navigator.userAgent.match(/iPad/i)  
+                || navigator.userAgent.match(/iPod/i)  
+                || navigator.userAgent.match(/BlackBerry/i)  
+                || navigator.userAgent.match(/Windows Phone/i)
+                ){
+				document.getElementById("sidebar-wrapper").style.display = 'none';
+			}else{
+				document.getElementById("sidebar-wrapper").style.display = 'block';
+			}
+		}
+		checkDevice();
+	</script>
+</body>
+</html>
